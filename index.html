@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="stylesheet" href="style.css">
+        <title>Document</title>
+    </head>
+    <body>
+        <div class="gen">
+            <form action="sp_insertar.html" method="POST">
+                <div class="input-group">
+                    <center><h2> Iniciar Sesión </h2> </center>
+                    <label for="Usuario">Usuario:</label>
+                    <input type="text" name="usu" required placeholder="Nombre"><br><br><br>
+            
+                    <label for="email">Correo Electrónico:</label>
+                    <input type="email" name="email" placeholder="Dirección de correo electrónico" required><br><br><br>
+                
+                    <label for="telefono">Teléfono:</label> 
+                    <input type="text" name="telef" required ><br><br><br>
+                        
+                    <input type="submit" value="Guardar">
+                </div>
+            </form>
+        </div>   
+        <br><br><br><hr><br><br>
+        <div align="center">
+            <table border="2px">
+                 <tr>
+                    <th>ID</th>
+                    <th>Usuario nombre de la persona</th>
+                    <th>Telefono</th>
+                    <th>Email</th>
+                    <th>Opciones</th>
+                </tr>   
+            
+                <?php
+                    $cnx = mysqli_connect("localhost", "root", "", "ejemplobd");
+                    $spl = "SELECT id, usuario, telefono, email FROM asignacion order by id desc";
+                    $rta = mysqli_query($cnx, $spl);
+                    while ($mostrar = mysqli_fetch_row($rta)){
+                    
+                    ?>    
+                    <tr>
+                        <td><?php echo $mostrar[0] ?></td>
+                        <td><?php echo $mostrar[1] ?></td>
+                        <td><?php echo $mostrar[2] ?></td>
+                        <td><?php echo $mostrar[3] ?></td>                        
+                        <td>
+                            <a href="editar.php? 
+                            id=<?php echo $mostrar[0] ?> &
+                            usu=<?php echo $mostrar[1] ?> &
+                            telef=<?php echo $mostrar[2] ?> & 
+                            email=<?php echo $mostrar[3] ?>
+                            ">Editar</a>
+                            
+                            <a href="sp_eliminar.php? id=<?php echo $mostrar[0] ?>">Eliminar</a>
+                        </td>
+                    </tr>
+                    
+                    <?php
+                    }
+                    ?>
+
+
+            </table>
+        </div>
+    </body>
+</html>

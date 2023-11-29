@@ -1,0 +1,15 @@
+<?php
+    $usu= $_POST['usu'];
+    $telef= $_POST['telef'];
+    $email= $_POST['email'];
+
+    $cnx = mysqli_connect("localhost", "root", "", "ejemplobd");
+    $spl = "INSERT INTO asignacion(usuario, telefono, email) VALUES('$usu','$telef','$email')";
+    $rta = mysqli_query($cnx, $spl);
+
+    if(!$rta){
+        echo "No se inserto";
+    }else{
+        header("Location: index.php");
+    }
+?>

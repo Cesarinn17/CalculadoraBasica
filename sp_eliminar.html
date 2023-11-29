@@ -1,0 +1,16 @@
+<?php
+    $id= $_POST['id'];
+    $usu= $_POST['usu'];
+    $telef= $_POST['telef'];
+    $email= $_POST['email'];
+
+    $cnx = mysqli_connect("localhost", "root", "", "ejemplobd");
+    $spl = "UPDATE asignacion set usuario='$usu', telefono='$telef', email='$email' where id like $id";
+    $rta = mysqli_query($cnx, $spl);
+
+    if(!$rta){
+        echo "No se Actualizo ";
+    }else{
+        header("Location: index.php");
+    }
+?>

@@ -1,0 +1,35 @@
+body{
+    background-image: url(https://png.pngtree.com/background/20210712/original/pngtree-cute-hand-drawn-style-math-education-green-plaid-background-picture-image_1176972.jpg);
+    background-attachment: fixed;
+    background-repeat: no-repeat;
+    background-size: cover;
+    font-size: 22px;
+}
+.gen{
+    background-color: rgb(133, 215, 188);
+    border-radius: 10px; border: groove;
+    height: auto;
+    width: 700px;
+    margin: auto; /*centra horizontalmente*/
+    margin-top: 100px;
+    padding-top: 20px;
+    padding-bottom: 60px;  
+    padding-left: 5%;
+    padding-right: 5%;  
+}
+button{
+    background-color: #ffffff;
+    border-radius: 10px; border: groove;
+    height: 30%;
+    width: 30%;
+    font-size:100%;
+}
+
+input {
+    font-size: 100%;
+    border-radius: 8px;
+}
+h2{
+    font-family: sans-serif, impact;
+    color: white;
+}

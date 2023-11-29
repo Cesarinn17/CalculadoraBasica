@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="es">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="stylesheet" href="style.css">
+        <title>Catálogo de Productos</title>
+        <style>
+            body {
+                font-family: Arial, sans-serif;
+                margin: 20px;
+            }
+
+            .producto {
+            border: 1px solid #ccc;
+            padding: 10px;
+            margin: 10px;
+            text-align: center;
+            width: 200px;
+            display: inline-block;
+            vertical-align: top;
+            position: relative; /* Necesario para el posicionamiento absoluto de la imagen */
+            overflow: hidden; /* Oculta las partes de la imagen que se desbordan del contenedor */
+        }
+
+        .producto img {
+            max-width: 100%;
+            max-height: 150px;
+            margin-bottom: 10px;
+            animation: moverImagen 2s linear infinite; /* Aplica la animación a la imagen */
+        }
+
+        @keyframes moverImagen {
+            0% {
+                transform: translateX(0); /* Posición inicial (sin movimiento) */
+            }
+            100% {
+                transform: translateX(100%); /* Mueve la imagen completamente fuera del contenedor */
+            }
+        }
+
+        .producto h3 {
+            font-size: 1.2em;
+            margin-bottom: 5px;
+        }
+
+        .producto p {
+            color: #555;
+            margin-bottom: 10px;
+        }
+
+        .producto a {
+            text-decoration: none;
+            background-color: #4CAF50;
+            color: white;
+            padding: 8px 16px;
+            border-radius: 4px;
+            display: inline-block;
+        }
+
+        .producto a:hover {
+            background-color: #45a049;
+        }
+        </style>
+    </head>
+    <body>
+        <center>
+            <br><br>
+                <h1> Meteriales/utiles para la clase de matematicas</h1>
+            <br><br><br>
+            <div class="producto">
+                <img src="https://cdn.pixabay.com/photo/2016/07/29/21/42/school-1555910_640.png">
+                <h3>Producto A</h3>
+                <p>Precio: $20.99</p>
+                <a href="index.php">Ver Detalles</a>
+            </div>
+
+            <div class="producto">
+                <img src="https://cdn.pixabay.com/photo/2016/07/29/21/41/school-1555907_640.png">
+                <h3>Producto B</h3>
+                <p>Precio: $15.50</p>
+                <a href="index.php">Ver Detalles</a>
+            </div>
+
+            <div class="producto">
+                <img src="https://cdn.pixabay.com/photo/2020/08/08/05/15/pencil-5472136_640.png">
+                <h3>Producto C</h3>
+                <p>Precio: $30.00</p>
+                <a href="index.php">Ver Detalles</a>
+            </div>
+        </center>
+    </body>
+</html>

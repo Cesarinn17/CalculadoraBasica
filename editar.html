@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="stylesheet" href="style.css">
+        <title>Document</title>
+        <style>
+            table{
+                width: 700px;
+                margin: 0 auto;
+                height: 300px;
+            }
+            input[type="text"]{
+                width: 500px;
+                height: 30px;
+                margin: 0 auto;
+            }
+        </style>
+    </head>
+    <body>
+        <?php 
+            $id= $_GET['id'];
+            $usu= $_GET['usu'];
+            $telef= $_GET['telef'];
+            $email= $_GET['email'];
+        ?>
+        <div id="form">
+            <center>
+                <h1> Editar  Datos</h1>
+                <br><br><br>
+                <form action="sp_editar.php" method="post">
+                    <table border="1">
+                        <tr>
+                            <td> Ingresar Datos: </td>
+                            <td><input type="text" name="id" id="" style="visibility:hidden" value="<?=$id ?>"></td>
+                        </tr>
+                        <tr>
+                            <td> Usuarios: </td>
+                            <td><input type="text" name="usu" id="" value="<?=$usu ?>"></td>
+                        </tr>
+                        <tr>
+                            <td> Telefono: </td>
+                            <td><input type="text" name="telef" id="" value="<?=$telef ?>"></td>
+                        </tr>
+                        <tr>
+                            <td> email: </td>
+                            <td><input type="text" name="email" id="" value="<?=$email ?>"></td>
+                        </tr>
+                        <tr>
+                            <td><input type="submit" value="Guardar"></td>
+                            <td><a href="index.php">Cancelar</a></td>
+                    </table>
+                </form>
+            </center>
+        </div>
+    </body>
+</html>
